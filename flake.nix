@@ -28,12 +28,6 @@
               gopkg.godef
               gopkg.golint
               go
-              sqlite
-              litestream
-              shellcheck
-              sqlfluff
-              nodejs
-              flyctl
             ];
 
             shellHook = ''
@@ -42,14 +36,6 @@
               export GOROOT="${go}/share/go"
 
               go version
-              echo "node" "$(node --version)"
-              echo "npm" "$(npm --version)"
-              echo "npx" "$(npx --version)"
-              fly version | cut -d ' ' -f 1-3
-              echo "sqlite" "$(sqlite3 --version | cut -d ' ' -f 1-2)"
-              echo "litestream" "$(litestream version)"
-              echo "shellcheck" "$(shellcheck --version | grep '^version:')"
-              sqlfluff --version
             '';
         };
       });
